@@ -1,27 +1,34 @@
 <template>
-  <div class="card_item">
-    <div class="card_header">
-      <img :src="charImage" alt="" />
-      <h3>
-        {{ charName }}
-      </h3>
-    </div>
-    <div class="card_body">
-      <p><span class="colorOne">ID:</span> {{ charId }}</p>
-      <p><span class="colorTwo">Especie:</span> {{ charSpecie }}</p>
-      <p><span class="colorTwo">Genero:</span> {{ charGender }}</p>
-      <p>
-        <span class="colorTwo">Estado:</span>
-        <span
-          :class="{
-            green: charStatus === 'Alive',
-            red: charStatus === 'Dead',
-            orange: charStatus === 'unknown',
-          }"
-        >
-          {{ charStatus }}
-        </span>
-      </p>
+  <div>
+    <div class="card">
+      <div class="logo_card">
+        <img class="logo" alt="Vue logo" src="../assets/logo.png" />
+      </div>
+      <div class="card_item" v-for="item in chars" :key="item.id">
+        <div class="card_header">
+          <img :src="item.image" alt="" />
+          <h3>
+            {{ item.name }}
+          </h3>
+        </div>
+        <div class="card_body">
+          <p><span class="colorOne">ID:</span> {{ item.id }}</p>
+          <p><span class="colorTwo">Especie:</span> {{ item.specie }}</p>
+          <p><span class="colorTwo">Genero:</span> {{ item.gender }}</p>
+          <p>
+            <span class="colorTwo">Estado:</span>
+            <span
+              :class="{
+                green: item.status === 'Alive',
+                red: item.status === 'Dead',
+                orange: item.status === 'unknown',
+              }"
+            >
+              {{ item.status }}
+            </span>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -30,17 +37,18 @@
 export default {
   name: "CharCard",
   props: {
-    charName: String,
-    charId: Number,
-    charStatus: String,
-    charSpecie: String,
-    charGender: String,
-    charImage: String,
+    chars: Array,
   },
 };
 </script>
 
 <style scoped>
+.card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: auto;
+  gap: 2rem;
+}
 .card_item {
   border: 2px solid black;
   border-radius: 6px;
@@ -51,7 +59,7 @@ export default {
   background: #f0f0f0;
   padding: 0.5rem 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
 }
 
 .card_header img {
@@ -68,6 +76,20 @@ export default {
 
 .card_body {
   padding: 1rem;
+}
+
+.logo_card {
+  background: #594fff;
+  border: 2px solid #594fff;
+  border-radius: 6px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.logo {
+  width: 200px;
+  height: 150px;
 }
 
 .colorOne {

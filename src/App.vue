@@ -59,7 +59,7 @@ h3 {
 #nav {
   padding: 2rem;
   background: #f0f0f0;
-  margin: 0 -20% 2rem -20%;
+  margin: 0 -20% 3rem -20%;
 }
 
 #nav a {
