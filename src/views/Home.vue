@@ -11,9 +11,6 @@
       />
       <button class="buttonOverlay" @click="seeAll">Buscar</button>
     </div>
-    <!-- <div class="logo_card">
-        <img class="logo" alt="Vue logo" src="../assets/logo.png" />
-      </div> -->
     <charCard :chars="filteredChars" v-show="seeAll"></charCard>
   </div>
 </template>
