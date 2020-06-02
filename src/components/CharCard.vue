@@ -13,7 +13,7 @@
         </div>
         <div class="card_body">
           <p><span class="colorOne">ID:</span> {{ item.id }}</p>
-          <p><span class="colorTwo">Especie:</span> {{ item.specie }}</p>
+          <p><span class="colorTwo">Especie:</span> {{ item.species }}</p>
           <p><span class="colorTwo">Genero:</span> {{ item.gender }}</p>
           <p>
             <span class="colorTwo">Estado:</span>
