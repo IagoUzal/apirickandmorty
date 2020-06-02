@@ -2,6 +2,10 @@
 
 Entrega Frontend con Vue y Axios, consumiendo [API](https://rickandmortyapi.com/)
 
+**Demo Publicada:**
+
+[http://iagouzal-rickandmorty.surge.sh](http://iagouzal-rickandmorty.surge.sh)
+
 ## Project setup
 
 ```
